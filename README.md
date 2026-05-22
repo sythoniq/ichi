@@ -1,5 +1,4 @@
-
-# Shopping Cart Project
+# Ichi (A Basic Shopping Cart)
 
 > **Project Takeaways**
 
