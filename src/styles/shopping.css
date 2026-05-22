@@ -61,16 +61,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1.2em;
 }
 
 .set {
+  font-family: monospace;
   display: flex;
+  align-items: center;
   font-size: 1.25em;
   max-width: 50%;
+  gap: .3em;
 }
 
 .set > input {
   max-width: 75%;
+}
+
+.set > button {
+  font-weight: 600;
+  padding: 0 .1em;
 }
 
 .item-quantity > button {

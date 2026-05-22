@@ -9,7 +9,7 @@ export default function Root() {
       <header className="page-heading">
         <Link to={'home'}>
           <div className="name-and-logo">
-            <h3>Sample Shop</h3>
+            <h3>Ichi Shop</h3>
           </div>
         </Link>
         <nav className="heading-nav">
