@@ -3,6 +3,8 @@ import {useOutletContext} from 'react-router'
 
 import {ItemCard as Card} from '../Card.jsx'
 
+const URL = 'https://fakestoreapi.com'
+
 export default function Shopping(props) {
   const {list, box} = useOutletContext();
   const [error, setError] = useState(null);
@@ -14,10 +16,10 @@ export default function Shopping(props) {
   useEffect(() => {
     async function getData() {
       try {
-        const res = await fetch('https://fakestoreapi.com/products')
+        const res = await fetch(`${URL}/products`)
 
         if (!res.ok) {
-          throw new Error(`HTTP Error: Status ${response.status}`);
+          throw new Error(`HTTP Error: Status ${res.status}`);
         }
 
         const data = await res.json();
@@ -63,39 +65,40 @@ export default function Shopping(props) {
   }
 
   function handleDecrease(e) {
-    const tgt = document.getElementById(e.id).querySelector("input");
-    if (tgt.value != 0) {
-      tgt.value--
-    }
+		const tgt = document.getElementById(e.id).querySelector("input");
+		if (tgt.value != 0) {
+			tgt.value--
+		}
 
-    return tgt.value;
-  }
+		return tgt.value;
+	}
 
-  if (loading == true) {
-    return (
-      <div className="loading-page">
-        <div className="loader"></div>
-      </div>
-    )
-  } else if (loading == false) {
-    return (
-      <main className="shopping-content">
-        {shopList.map((item) => {
-          return (
-            <Card itemName={item.title} imgSrc={item.image} itemId={item.id}
-              key={item.id} itemPrice={item.price}
-              itemRating={item.rating.rate} handleInput={validateInput}
-              handleDecrease={handleDecrease} handleIncrease={handleIncrease} />
-          )
-        })}
-      </main>
-    )
-  } else {
-    return (
-      <div className="fetch-error">
-        <h3>Failed To Fetch Data</h3>
-        <p>There seems to be an issue with our network, please try again later!</p>
-      </div>
-    )
-  }
+	if (loading) {
+		return (
+			<div className="loading-page">
+				<div className="loader"></div>
+			</div>
+		)
+	}
+
+	if (error) {
+		return (
+			<div className="fetch-error">
+				<h3>Failed To Fetch Data</h3>
+				<p>There seems to be an issue with our network, please try again later!</p>
+			</div>
+		)
+	}
+	return (
+		<main className="shopping-content">
+			{shopList.map((item) => {
+				return (
+					<Card itemName={item.title} imgSrc={item.image} itemId={item.id}
+						key={item.id} itemPrice={item.price}
+						itemRating={item.rating.rate} handleInput={validateInput}
+						handleDecrease={handleDecrease} handleIncrease={handleIncrease} />
+				)
+			})}
+		</main>
+	)
 }
