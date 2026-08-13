@@ -1,0 +1,6 @@
+.header {
+	max-width: 15rem;
+	display: flex;
+	align-items: center;
+	gap: 4rem;
+}
