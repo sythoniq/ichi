@@ -31,9 +31,42 @@ export default function Product() {
 		}
 
 		getProduct()
-	}, [URL])
+	}, [])
+
+	if (isLoading) {
+		return (
+			<p>Loading</p>
+		)
+	}
+
+	if (isError) {
+		return (
+			<p>Error</p>
+		)
+	}
 
 	return (
-		<p>-_-</p>	
+		<div className={styles.itemPage}>
+			<h3>{item.title}</h3>
+			<div className={styles.itemDetails}>
+				<div className={styles.itemImage}>
+					<img src={item.image} alt={item.title} />
+				</div>
+				<div>
+					<div>
+						<h3>{`$${item.price}`}</h3>
+						<p>{`${item.rating.rate}/5`}</p>
+					</div>
+					<div>
+						<button>+</button>
+						<input type='text' placeholder="Quantity" />
+						<button>-</button>
+					</div>
+					<div>
+						<button>Add to cart</button>
+					</div>
+				</div>
+			</div>
+		</div>
 	)
 }
