@@ -58,9 +58,7 @@ export default function Product() {
 						<p>{`${item.rating.rate}/5`}</p>
 					</div>
 					<div>
-						<button>+</button>
-						<input type='text' placeholder="Quantity" />
-						<button>-</button>
+						<input type='number' placeholder="Quantity" min='0' max='9999'/>
 					</div>
 					<div>
 						<button>Add to cart</button>
