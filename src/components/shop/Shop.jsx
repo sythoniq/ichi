@@ -51,7 +51,7 @@ export default function Shop() {
 	}
 
 	const shopList = list.map(item => 
-		<Card key={item.id} itemName={item.title} />
+		<Card key={item.id} itemId={item.id} itemName={item.title} itemImg={item.image} />
 	)
 
 	return (
