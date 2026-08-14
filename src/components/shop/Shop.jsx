@@ -40,7 +40,7 @@ export default function Shop() {
 
 	if (isLoading) {
 		return (
-			<p>Loading</p>
+			<span className={styles.loader}></span>
 		)
 	}
 

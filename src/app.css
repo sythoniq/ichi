@@ -3,16 +3,16 @@
 	margin: 0;
 }
 
-body, html {
+body, html, #root {
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
 }
 
 #root {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
-	gap: 1.2em;
-	padding: 1em;
+	gap: 1em;
+	padding: .5em 1em;
 }
