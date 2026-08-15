@@ -35,7 +35,7 @@ export default function Product() {
 
 	if (isLoading) {
 		return (
-			<p>Loading</p>
+			<span className={styles.loader}></span>
 		)
 	}
 
@@ -47,12 +47,15 @@ export default function Product() {
 
 	return (
 		<div className={styles.itemPage}>
-			<h3>{item.title}</h3>
 			<div className={styles.itemDetails}>
 				<div className={styles.itemImage}>
 					<img src={item.image} alt={item.title} />
 				</div>
 				<div>
+					<h3>{item.title}</h3>
+					<div>
+						<p>{item.description}</p>
+					</div>
 					<div>
 						<h3>{`$${item.price}`}</h3>
 						<p>{`${item.rating.rate}/5`}</p>
