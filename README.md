@@ -13,7 +13,7 @@ and manage a shopping cart, built with React and the Fake Store API.
 **Data:** Fake Store API (fakestoreapi.com)
 
 ## Live Demo
-// Will add a link once deployed
+[Ichi](https://sythoniq.github.io/ichi/) Live Link
 
 ## Screenshots
 **Shop Page**
