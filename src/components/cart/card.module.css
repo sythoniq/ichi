@@ -27,14 +27,17 @@
 }
 
 .itemDetails > button {
-	max-width: max-content;
+	max-width: 4rem;
 	font-size: 1em;
 	padding: 0 .5em;
 	align-self: end;
-	background-color: red;
 	color: white;
 	border: none;
 	border-radius: 12px;
 	cursor: pointer;
+	background: transparent;
 }
 
+.itemDetails > button > svg {
+	width: 100%;
+}
