@@ -24,7 +24,6 @@ export default function Product() {
 				return
 			}
 			
-			console.log(data)
 			setItem(data)
 			setIsLoading(false)
 			return;
@@ -51,19 +50,17 @@ export default function Product() {
 				<div className={styles.itemImage}>
 					<img src={item.image} alt={item.title} />
 				</div>
-				<div>
+				<div className={styles.itemInfo}>
 					<h3>{item.title}</h3>
-					<div>
+					<div className={styles.itemDesc}>
 						<p>{item.description}</p>
 					</div>
-					<div>
+					<div className={styles.itemMinor}>
 						<h3>{`$${item.price}`}</h3>
-						<p>{`${item.rating.rate}/5`}</p>
+						<p>{`Rating: ${item.rating.rate}/5`}</p>
 					</div>
-					<div>
-						<input type='number' placeholder="Quantity" min='0' max='9999'/>
-					</div>
-					<div>
+					<div className={styles.itemQuantity}>
+						<input type='number' placeholder="Quantity" min='0' max='99'/>
 						<button>Add to cart</button>
 					</div>
 				</div>
