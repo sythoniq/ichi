@@ -16,3 +16,9 @@
 .cartBtn {
 	width: 3rem;
 }
+
+.cartCount {
+	position: absolute;
+	font-weight: 600;
+	font-size: 1.2em;
+}
