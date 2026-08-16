@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://sythoniq.github.io/shopping-odin",
+  "homepage": "https://sythoniq.github.io/ichi",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
