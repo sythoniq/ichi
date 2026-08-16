@@ -9,6 +9,7 @@ export default function Cart() {
 		<CartCard key={item.item.id} cartItem={item.item} itemCount={item.count} />
 	)
 
+	const total = cart.reduce((sum, cartItem) => sum + cartItem.item.price * cartItem.count, 0)
 	return (
 		<main className={styles.cartPage}>
 			{cart.length <= 0 ? (
@@ -16,6 +17,11 @@ export default function Cart() {
 			) : (
 					cartItems
 				)}
+			{ cart.length > 0 && (
+			<div className={styles.cartTotal}>
+				<p>{`Total: $${total.toFixed(2)}`}</p>
+			</div>
+			)}
 		</main>
 	)
 }

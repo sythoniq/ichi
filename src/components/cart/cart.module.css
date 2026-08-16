@@ -5,3 +5,14 @@
 	column-gap: 1em;
 	row-gap: 1em;
 }
+
+.cartTotal {
+	border: 1px solid black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: max-content;
+	padding: .5em;
+	border-radius: 12px;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
