@@ -41,18 +41,12 @@ export default function Product() {
 			return;
 		}
 		const cartItem = {item, count}	
-		if (cart.length > 0) {
-			cart.forEach((cI) => {
-				if (cI.item.id == item.id) {
-					cI.count = count;
-					setCart([...cart])
-					return;
-				}
-				setCart([...cart, cartItem])
-			})	
-			return;
+		if (cart.some((cI) => cI.item.id == item.id)) {
+			const oldItem = cart.find((cI) => cI.item.id == item.id)				
+			oldItem.count = count;
+			return setCart([...cart])
 		}
-		return setCart([...cart, cartItem])	
+		return setCart([...cart, cartItem])
 	}
 
 	if (isLoading) {
@@ -67,7 +61,6 @@ export default function Product() {
 		)
 	}
 
-	console.log(cart)
 	return (
 		<div className={styles.itemPage}>
 			<div className={styles.itemDetails}>

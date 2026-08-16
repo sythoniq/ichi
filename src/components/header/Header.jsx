@@ -2,7 +2,6 @@ import { Link } from 'react-router'
 import styles from './header.module.css'
 
 export default function Header(props) {
-	console.log(props)
 	return (
 		<header className={styles.header}>
 			<div className={styles.homeBtn}>

@@ -1,0 +1,40 @@
+.cartCard {
+	display: flex;
+	align-items: center;
+	gap: 1.2em;
+	border: 1px solid black;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+	border-radius: 12px;
+	padding: 0.5em 1em;
+	max-width: 20rem;
+}
+
+.itemImage {
+	max-width: 100%;
+}
+
+.itemImage > img {
+	max-width: 100%;
+	object-fit: cover;
+}
+
+.itemDetails {
+	display: flex;
+	flex-direction: column;
+	gap: 1.2em;
+	font-size: 1.2em;
+	font-weight: 600;
+}
+
+.itemDetails > button {
+	max-width: max-content;
+	font-size: 1em;
+	padding: 0 .5em;
+	align-self: end;
+	background-color: red;
+	color: white;
+	border: none;
+	border-radius: 12px;
+	cursor: pointer;
+}
+
