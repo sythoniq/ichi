@@ -1,0 +1,7 @@
+.cartPage {
+	max-width: 100%;
+	display: grid;
+	grid-template: 1fr / repeat(auto-fit, minmax(350px, 1fr));
+	column-gap: 1em;
+	row-gap: 1em;
+}

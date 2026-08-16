@@ -63,11 +63,16 @@
 }
 
 .itemImage {
-	max-width: 100%;
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: .6em;
+}
+
+.itemImage > img {
+	max-width: 100%;
+	object-fit: cover;
 }
 
 .loader {
