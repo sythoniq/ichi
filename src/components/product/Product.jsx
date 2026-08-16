@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router'
+import { useParams, useOutletContext } from 'react-router'
 import styles from './product.module.css'
 
 export default function Product() {
+	const { context } = useOutletContext()
 	const productId = Number(useParams().productId);
 	const URL = `https://fakestoreapi.com/products/${productId}`
 	const [ item, setItem ] = useState()
 	const [ isLoading, setIsLoading ] = useState(true)
 	const [ isError, setIsError ] = useState(null)
+	const [ count, setCount ] = useState(0)
+	const [ cart, setCart ] = context;
 
 	useEffect(() => {
 		async function getProduct() {
@@ -32,6 +35,23 @@ export default function Product() {
 		getProduct()
 	}, [])
 
+	function handleCart(e) {
+		e.preventDefault()
+		if (count <= 0 || !count) {
+			return;
+		}
+		const cartItem = {item, count}	
+		if (cart.length > 0) {
+			cart.forEach((cI) => {
+				if (cI.item.id == item.id) {
+					cI.count = count;
+				}
+			})	
+			return;
+		}
+		return setCart([...cart, cartItem])	
+	}
+
 	if (isLoading) {
 		return (
 			<span className={styles.loader}></span>
@@ -44,6 +64,7 @@ export default function Product() {
 		)
 	}
 
+	console.log(cart)
 	return (
 		<div className={styles.itemPage}>
 			<div className={styles.itemDetails}>
@@ -59,10 +80,10 @@ export default function Product() {
 						<h3>{`$${item.price}`}</h3>
 						<p>{`Rating: ${item.rating.rate}/5`}</p>
 					</div>
-					<div className={styles.itemQuantity}>
-						<input type='number' placeholder="Quantity" min='0' max='99'/>
-						<button>Add to cart</button>
-					</div>
+					<form className={styles.itemQuantity}>
+						<input type='number' placeholder="Quantity" min='0' max='99' onChange={(e) => setCount(Number(e.target.value))}/>
+						<button onClick={handleCart}>Add to cart</button>
+					</form>
 				</div>
 			</div>
 		</div>
