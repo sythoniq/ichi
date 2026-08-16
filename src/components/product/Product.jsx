@@ -45,7 +45,10 @@ export default function Product() {
 			cart.forEach((cI) => {
 				if (cI.item.id == item.id) {
 					cI.count = count;
+					setCart([...cart])
+					return;
 				}
+				setCart([...cart, cartItem])
 			})	
 			return;
 		}
