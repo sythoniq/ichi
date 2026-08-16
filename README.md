@@ -1,37 +1,37 @@
-# Ichi (A Basic Shopping Cart)
+ # Ichi
 
-> **Project Takeaways**
+A full-stack-feeling e-commerce demo — browse products, view details, 
+and manage a shopping cart, built with React and the Fake Store API.
 
->> *React Routers*
+## Features
+- Product grid with live data from an external API
+- Individual product detail pages
+- Full cart flow: add items, update quantities, remove items, running total
 
- > - Gained some insight into how react routers work, by routing three different
- >   pages together
-    
- > - Introduced to the concept of context and how it can be utilized, and this
- >   in this project, it allowed me to lift state to the `Root.jsx` route for
- >   all my other routes to have access to
+## Tech Stack
+**Frontend:** React, React Router, CSS Modules
+**Data:** Fake Store API (fakestoreapi.com)
 
- > - Learnt more about try and catch blocks and how I can use them in
- >   asynchronous actions, they are pretty handy to handle state in edge cases
+## Live Demo
+// Will add a link once deployed
 
->> *Some Bits Of CSS*
+## Screenshots
+**Shop Page**
+![Alt Text](./assets/home.png?raw=true "Screenshot of app")
+**Item Page**
+![Alt Text](./assets/product.png?raw=true "Screenshot of app")
+**Cart Page**
+![Alt Text](./assets/cart.png?raw=true "Screenshot of app")
 
- > - Added some animations to an element for the first time today, by getting
- >   insights from [W3Schools](https://w3schools.com) in making a loader. As
- >   well as making a small animation to the gif in the home
+## Running Locally
+1. Clone the repo
+2. Run `npm install`
+3. Run `npm run dev`
 
- > - Learnt about handling of overflow when it comes to texts with things like
- >   `ellipsis` to hide extra text to preserve space
+## Known Limitations
+- Cart doesn't persist across page reloads (no localStorage/backend yet)
+- Early react project that was refined to fix the state management and poor practices from early react learning.
 
->> *TO-DO*
 
- > - A collection of some of the bits that are remaining and would be ideal to
- >   get done.
-
- >> - Adding some testing to the entire project using vitest. Though I do need
- >>   to read up on this soon.
-
- >> - Maybe redo the styling for it to be much more user friendly by considering
- >>   color contrast and responsiveness or different devices as well as font
- >>   size if need be.
-    
+#### Disclaimer
+- I did use AI to help format the README thats all.
